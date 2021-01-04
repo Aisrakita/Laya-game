@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1, viewport-fit=cover"
+        viewport-fit=cover>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="//enbrands-2.oss-cn-shanghai.aliyuncs.com/sim/module.css?v=1.2" />
+    <script type="text/javascript" src="//enbrands.oss-cn-shenzhen.aliyuncs.com/javascripts/Hilo-1.1.10/build/standalone/hilo-standalone.js"></script>
+    <script>
+        version = 1;
+        window.rejectRender = true;
+        window.debug = 1;
+        window.Tida = {
+            isSupportedApp: true,
+            ready: () => {}
+        };
+
+        const resize = ()=>{
+        let fontSize = document.documentElement.clientWidth / 10;
+            if (fontSize < 37.5) {
+                document.getElementsByName('viewport')[0].content =
+                    `width=device-width,initial-scale=${fontSize / 37.5}maximum-scale=1,user-scalable=no`;
+                fontSize = 37.5;
+            } else if (fontSize > 75) {
+                fontSize = 75;
+            }
+            document.documentElement.style.fontSize = `${fontSize}px`;        
+        }
+
+        resize();
+        window.onresize = resize;
+    </script>
+    <script type="text/javascript" src="./data.js"></script>
+</head>
+
+<body>
+    <div id="game-container"></div>
+
+</body>
+<script src="//enbrands.oss-cn-shenzhen.aliyuncs.com/javascripts/jquery-3.1.0.min.js"></script>
+<script src="//enbrands-2.oss-cn-shanghai.aliyuncs.com/sim/bundle.js?v=1.2"></script>
+<script src="//enbrands-2.oss-cn-shanghai.aliyuncs.com/sim/base.js?v=1.2"></script>
+<script type="text/javascript" src="./index.js"></script>
+
+</html>
